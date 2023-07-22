@@ -58,7 +58,8 @@ columns = ['Country', 'EdLevel', 'YearsCodePro']
 ok = st.button("Calculate Salary")
 if ok: 
     # Create a DataFrame with the row data and columns matching the training data
-    expericence_input = pd.DataFrame(expericence, columns = ['YearsCodePro'])
+    expericence_input = {'YearsCodePro': [expericence]}
+    expericence_input = pd.DataFrame(data=expericence_input)
 
     # Perform one-hot encoding for the countries and education input
     country_dummy = pd.get_dummies([country], columns=['Country'], prefix='', prefix_sep='')
