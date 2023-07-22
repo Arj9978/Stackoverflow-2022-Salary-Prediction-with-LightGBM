@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import joblib
 import lightgbm
-from utils import PrepProcesor, columns
+from utils import columns
 
 model = joblib.load('finalized_model.joblib')
 st.title('Salary Prediction in 2022')
