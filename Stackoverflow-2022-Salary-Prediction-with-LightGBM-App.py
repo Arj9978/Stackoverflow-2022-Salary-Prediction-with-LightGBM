@@ -43,14 +43,14 @@ countries = (
     "Other"
 )
 
-education = (
+educations = (
     "Less than a Bachelor",
     "Bachelor’s degree",
     "Master’s degree"
 )
 
 country = st.selectbox("Country", countries)
-education = st.selectbox("Education Level", education)
+education = st.selectbox("Education Level", educations)
 expericence = st.slider("Years of Experience", 0, 50, 3)
 
 columns = ['Country', 'EdLevel', 'YearsCodePro']
@@ -66,8 +66,8 @@ if ok:
     education_dummy = pd.get_dummies([education], columns=['EdLevel'], prefix='', prefix_sep='')
 
     # Align the countries and education columns with the training data columns
-    country_dummy = country_dummy.reindex(columns=Country, fill_value=0)
-    education_dummy = education_dummy.reindex(columns=EdLevel, fill_value=0)
+    country_dummy = country_dummy.reindex(columns=countries, fill_value=0)
+    education_dummy = education_dummy.reindex(columns=educations, fill_value=0)
 
     # Concatenate the address columns with the input data
     X = pd.concat([country_dummy, education_dummy, expericence_input], axis=1)
