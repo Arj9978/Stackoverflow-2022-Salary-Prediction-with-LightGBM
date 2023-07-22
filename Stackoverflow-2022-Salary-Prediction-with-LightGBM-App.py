@@ -4,6 +4,9 @@ import pandas as pd
 import joblib
 import lightgbm
 
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler,LabelEncoder, OneHotEncoder
+
 model = joblib.load('finalized_model.joblib')
 st.title('Salary Prediction in 2022')
 st.write("""### We need some information to predict the salary""")
@@ -51,13 +54,21 @@ education = (
 country = st.selectbox("Country", countries)
 education = st.selectbox("Education Level", education)
 expericence = st.slider("Years of Experience", 0, 50, 3)
- 	 	
+
+categorical_pipeline = Pipeline([('OneHot', OneHotEncoder(handle_unknown='ignore'))])
+
+numeric_pipeline = Pipeline([('Scaler', StandardScaler())])  
+                                 
+transformer = ColumnTransformer([('Num', numeric_pipeline, ['YearsCodePro']), 
+                                 ('Category', categorical_pipeline, ['Country','EdLevel'])])
+
 columns = ['Country', 'EdLevel', 'YearsCodePro']
 
 ok = st.button("Calculate Salary")
 if ok:
     X_new = np.array([country,education,expericence])
     X_new_df = pd.DataFrame([X_new], columns = columns)
+    X_new_df = transformer.fit_transform(X_new_df)
     salary = model.predict(X_new_df)
     
     st.subheader(f"The estimated salary is ${salary[0]:.2f}")\
