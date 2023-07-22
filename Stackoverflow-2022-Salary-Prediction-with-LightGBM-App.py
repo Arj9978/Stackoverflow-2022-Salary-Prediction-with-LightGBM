@@ -37,12 +37,12 @@ countries = (
     "New Zealand",
     "Mexico",
     "South Africa",
-    "Pakistan"
-
+    "Pakistan",
+    "Other"
 )
 
 education = (
-    "Less than a Bachelors",
+    "Less than a Bachelor",
     "Bachelor’s degree",
     "Master’s degree"
 )
