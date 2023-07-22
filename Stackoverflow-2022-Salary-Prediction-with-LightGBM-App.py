@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import joblib
+import lightgbm
 
 model = joblib.load('finalized_model.joblib')
 st.title('Salary Prediction in 2022')
