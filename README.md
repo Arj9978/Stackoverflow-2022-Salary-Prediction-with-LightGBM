@@ -21,3 +21,4 @@ Data: We have included the Stackoverflow 2022 survey dataset (survey_2022.csv) u
 To get started with this project, simply clone this repository and explore the Jupyter notebooks to follow along with the analysis and model building process. Additionally, make sure you have the required libraries and dependencies installed to execute the code seamlessly.
 
 # URL of Web Application
+https://stackoverflow-2022-salary-prediction-with-lightgbm-5kgyyk8bkgj.streamlit.app/
