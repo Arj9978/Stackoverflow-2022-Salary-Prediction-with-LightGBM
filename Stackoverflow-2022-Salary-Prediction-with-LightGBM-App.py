@@ -51,12 +51,12 @@ education = (
 country = st.selectbox("Country", countries)
 education = st.selectbox("Education Level", education)
 expericence = st.slider("Years of Experience", 0, 50, 3)
-
+ 	 	
 columns = ['Country', 'EdLevel', 'YearsCodePro']
 
 ok = st.button("Calculate Salary")
 if ok:
-    X_new = np.array([countries,education,expericence])
+    X_new = np.array([country,education,expericence])
     X_new_df = pd.DataFrame([X_new], columns = columns)
     salary = model.predict(X_new_df)
     
