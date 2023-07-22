@@ -4,6 +4,7 @@ import pandas as pd
 import joblib
 import lightgbm
 
+from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler,LabelEncoder, OneHotEncoder
 
