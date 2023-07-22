@@ -75,14 +75,7 @@ if ok:
 
     X = np.array(X)
     st.write(X)
-
-
     
-    
-    # st.write(X_new_df.shape)
-    # X_new_df = transformer.fit_transform(X_new_df)
-    # st.write(X_new_df.shape)
-    
-    # salary = model.predict(X_new_df)
+    salary = model.predict(X)
     
     st.subheader(f"The estimated salary is ${salary[0]:.2f}")
