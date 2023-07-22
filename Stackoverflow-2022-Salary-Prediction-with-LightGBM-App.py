@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import joblib
 
-model = joblib.load('xgbpipe.joblib')
+model = joblib.load('finalized_model.joblib')
 st.title('Salary Prediction in 2022')
 st.write("""### We need some information to predict the salary""")
 
